@@ -1,0 +1,9 @@
+APP="flextime"
+
+BUILD_HOST="localhost"
+BUILD_USER="zdeneksejcek"
+BUILD_AT="/Users/zdeneksejcek/dev/flextime/app_build"
+
+PRODUCTION_HOSTS="flex.sejcek.cz"
+PRODUCTION_USER="zsej"
+DELIVER_TO="/home/zsej/app_build"
