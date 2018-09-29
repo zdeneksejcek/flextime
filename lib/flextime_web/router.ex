@@ -13,10 +13,10 @@ defmodule FlextimeWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/" do
+  scope "/api" do
     pipe_through :api
 
-    forward "/graphiql", Absinthe.Plug.GraphiQL,
+    forward "/api/graphiql", Absinthe.Plug.GraphiQL,
             schema: FlextimeWeb.Schema,
             interface: :simple,
             context: %{pubsub: FlextimeWeb.Endpoint}
