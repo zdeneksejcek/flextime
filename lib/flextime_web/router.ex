@@ -16,7 +16,7 @@ defmodule FlextimeWeb.Router do
   scope "/api" do
     pipe_through :api
 
-    forward "/api/graphiql", Absinthe.Plug.GraphiQL,
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
             schema: FlextimeWeb.Schema,
             interface: :simple,
             context: %{pubsub: FlextimeWeb.Endpoint}
