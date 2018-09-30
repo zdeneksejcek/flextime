@@ -44,7 +44,10 @@ defmodule Flextime.Mixfile do
       {:absinthe_ecto, "~> 0.1.3"},
       {:absinthe_plug, "~> 1.4.5"},
       {:edeliver, "~> 1.6.0"},
-      {:distillery, "~> 2.0.10"}
+      {:distillery, "~> 2.0.10"},
+      {:guardian, "~> 1.1"},
+      {:comeonin, "~> 4.0"},
+      {:bcrypt_elixir, "~> 1.0"}
     ]
   end
 

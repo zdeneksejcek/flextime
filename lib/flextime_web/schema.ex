@@ -51,7 +51,12 @@ defmodule FlextimeWeb.Schema do
   end
 
   query do
-    field :all_orgs, non_null(list_of(non_null(:organisation)))
+    field :all_orgs, non_null(list_of(non_null(:organisation))) do
+      resolve fn _, _ ->
+        {:ok, Flextime.Organisation |> Flextime.Repo.all}
+      end
+    end
+
     field :records, non_null(list_of(non_null(:record)))
   end
 

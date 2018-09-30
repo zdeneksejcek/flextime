@@ -56,3 +56,7 @@ config :flextime, Flextime.Repo,
   database: "flextime_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :flextime, FlextimeWeb.Guardian,
+       issuer: "flextime.cz",
+       secret_key: "X7Nri75TLb65nF4m4N9YW9Ld7BmbS1KRrlqGd8vXfn10JTdKPgn3Is4MMvep/fwa"
