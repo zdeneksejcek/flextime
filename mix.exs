@@ -20,7 +20,7 @@ defmodule Flextime.Mixfile do
   def application do
     [
       mod: {Flextime.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :bamboo, :ueberauth]
     ]
   end
 
@@ -47,7 +47,10 @@ defmodule Flextime.Mixfile do
       {:distillery, "~> 2.0.10"},
       {:guardian, "~> 1.1"},
       {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"}
+      {:bcrypt_elixir, "~> 1.0"},
+      {:bamboo, "~> 1.1"},
+      {:ueberauth, "~> 0.4"},
+      {:ueberauth_identity, "~> 0.2"}
     ]
   end
 

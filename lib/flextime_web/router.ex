@@ -16,6 +16,12 @@ defmodule FlextimeWeb.Router do
   scope "/api" do
     pipe_through :api
 
+    scope "/auth" do
+      post "/identity/callback", FlextimeWeb.AuthenticationController, :identity_callback
+    end
+
+    resources "/users", UserController, except: [:new, :edit]
+
     forward "/graphiql", Absinthe.Plug.GraphiQL,
             schema: FlextimeWeb.Schema,
             interface: :simple,
