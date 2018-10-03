@@ -60,3 +60,8 @@ config :flextime, Flextime.Repo,
 config :flextime, FlextimeWeb.Guardian,
        issuer: "flextime.cz",
        secret_key: "X7Nri75TLb65nF4m4N9YW9Ld7BmbS1KRrlqGd8vXfn10JTdKPgn3Is4MMvep/fwa"
+
+config :cors_plug,
+       origin: "*",
+       max_age: 86400,
+       methods: ["GET", "POST"]

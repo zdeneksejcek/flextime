@@ -20,12 +20,13 @@ defmodule FlextimeWeb.Router do
       post "/identity/callback", FlextimeWeb.AuthenticationController, :identity_callback
     end
 
-    resources "/users", UserController, except: [:new, :edit]
-
     forward "/graphiql", Absinthe.Plug.GraphiQL,
             schema: FlextimeWeb.Schema,
             interface: :simple,
             context: %{pubsub: FlextimeWeb.Endpoint}
+
+    forward "/", Absinthe.Plug,
+            schema: FlextimeWeb.Schema
   end
 
   # Other scopes may use custom stacks.

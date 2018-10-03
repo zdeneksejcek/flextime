@@ -37,6 +37,8 @@ defmodule FlextimeWeb.Endpoint do
     key: "_flextime_key",
     signing_salt: "iiC50LW6"
 
+  plug CORSPlug
+
   plug FlextimeWeb.Router
 
   @doc """

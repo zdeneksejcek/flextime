@@ -50,6 +50,21 @@ defmodule FlextimeWeb.Schema do
     field :name, non_null(:string)
   end
 
+  @desc "User"
+  object :user do
+    field :email, non_null(:string)
+  end
+
+  @desc "Password reset result"
+  object :reset do
+    field :result, non_null(:result)
+  end
+
+  enum :result do
+    value :ok, as: "ok"
+    value :error, as: "error"
+  end
+
   query do
     field :all_orgs, non_null(list_of(non_null(:organisation))) do
       resolve fn _, _ ->
@@ -58,6 +73,24 @@ defmodule FlextimeWeb.Schema do
     end
 
     field :records, non_null(list_of(non_null(:record)))
+  end
+
+  mutation do
+    @desc "Register new user"
+    field :register, type: :user do
+      arg :email, non_null(:string)
+      arg :word, non_null(:string)
+
+      resolve &FlextimeWeb.Resolvers.Users.create_user/3
+    end
+
+    @desc "Reword existing user"
+    field :reword, type: :reset do
+      arg :email, non_null(:string)
+
+      resolve &FlextimeWeb.Resolvers.Users.password_reset/3
+    end
+    
   end
 
 end

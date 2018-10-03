@@ -64,4 +64,10 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
+
+config :cors_plug,
+       origin: ["https://flextime.cz"],
+       max_age: 86400,
+       methods: ["GET", "POST"]
+
 import_config "prod.secret.exs"

@@ -39,18 +39,19 @@ defmodule Flextime.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"},
-      {:absinthe_ecto, "~> 0.1.3"},
-      {:absinthe_plug, "~> 1.4.5"},
-      {:edeliver, "~> 1.6.0"},
-      {:distillery, "~> 2.0.10"},
-      {:guardian, "~> 1.1"},
-      {:comeonin, "~> 4.0"},
-      {:bcrypt_elixir, "~> 1.0"},
-      {:bamboo, "~> 1.1"},
-      {:ueberauth, "~> 0.4"},
-      {:ueberauth_identity, "~> 0.2"}
+      {:gettext, "~> 0.11"},            #i18n
+      {:cowboy, "~> 1.0"},              #http
+      {:absinthe_ecto, "~> 0.1.3"},     #graphql
+      {:absinthe_plug, "~> 1.4.5"},     #graphql
+      {:edeliver, "~> 1.6.0"},          #deploy
+      {:distillery, "~> 2.0.10"},       #deploy
+      {:guardian, "~> 1.1"},            #security
+      {:comeonin, "~> 4.0"},            #hash
+      {:bcrypt_elixir, "~> 1.0"},       #hash
+      {:bamboo, "~> 1.1"},              #emails
+      {:ueberauth, "~> 0.4"},           #identity
+      {:ueberauth_identity, "~> 0.2"},  #identity
+      {:cors_plug, "~> 1.5"}            #cors
     ]
   end
 
